@@ -1,0 +1,586 @@
+.tippy-box[data-animation=fade][data-state=hidden] {
+    opacity: 0
+}
+
+[data-tippy-root] {
+    max-width: calc(100vw - 10px)
+}
+
+.tippy-box {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+    outline: 0;
+    transition-property: transform, visibility, opacity
+}
+
+.tippy-box[data-placement^=top]>.tippy-arrow {
+    bottom: 0
+}
+
+.tippy-box[data-placement^=top]>.tippy-arrow:before {
+    bottom: -7px;
+    left: 0;
+    border-width: 8px 8px 0;
+    border-top-color: initial;
+    transform-origin: center top
+}
+
+.tippy-box[data-placement^=bottom]>.tippy-arrow {
+    top: 0
+}
+
+.tippy-box[data-placement^=bottom]>.tippy-arrow:before {
+    top: -7px;
+    left: 0;
+    border-width: 0 8px 8px;
+    border-bottom-color: initial;
+    transform-origin: center bottom
+}
+
+.tippy-box[data-placement^=left]>.tippy-arrow {
+    right: 0
+}
+
+.tippy-box[data-placement^=left]>.tippy-arrow:before {
+    border-width: 8px 0 8px 8px;
+    border-left-color: initial;
+    right: -7px;
+    transform-origin: center left
+}
+
+.tippy-box[data-placement^=right]>.tippy-arrow {
+    left: 0
+}
+
+.tippy-box[data-placement^=right]>.tippy-arrow:before {
+    left: -7px;
+    border-width: 8px 8px 8px 0;
+    border-right-color: initial;
+    transform-origin: center right
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+    transition-timing-function: cubic-bezier(.54, 1.5, .38, 1.11)
+}
+
+.tippy-arrow {
+    width: 16px;
+    height: 16px;
+    color: #333
+}
+
+.tippy-arrow:before {
+    content: "";
+    position: absolute;
+    border-color: transparent;
+    border-style: solid
+}
+
+.tippy-content {
+    position: relative;
+    padding: 5px 9px;
+    z-index: 1
+}
+
+.tippy-box[data-theme~='uphint'] {
+    background-color: #15C97F;
+}
+
+.controller-container {
+    position: fixed;
+    width: 100%;
+    top: 88vh;
+    display: flex;
+    padding: 0 40px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.controller-container-reverse {
+    justify-content: flex-end;
+}
+
+.controller-logo-container {
+    width: auto;
+    height: auto;
+    z-index: 4;
+    display: flex;
+}
+
+.controller-logo-container-reverse {
+    flex-direction: row-reverse;
+}
+
+.controller-content-control {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.controller-content {
+    background-color: white;
+    border: 2px solid #15c97f;
+    border-radius: 50px;
+    top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin: 0px 10px;
+    padding: 10px 15px;
+    transition: all 1s 0s ease-in;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+}
+
+.controller-content-reverse {
+    flex-direction: row-reverse;
+}
+
+.controller-horizontal-margin {
+    margin: 0 30px;
+}
+
+.controller-logo {
+    top: -7px;
+    width: 80px;
+    height: 80px;
+    border-radius: 115px;
+    background-color: #15c97f;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    position: absolute;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+}
+
+.controller-logo-paused {
+    background-color: #f5c04b;
+}
+
+.img-inherit-size {
+    width: inherit;
+    height: inherit;
+}
+
+.controller-start-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.controller-separator {
+    width: 2px;
+    background-color: #ededed;
+    height: 40px;
+    margin: 0px 4px;
+}
+
+.controller-delete-icon {
+    border-radius: 90px;
+    background-color: #c91515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller-delete-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.controller-done-icon {
+    border-radius: 90px;
+    background-color: #15C97F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller-done-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.controller-count-bubble {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 5;
+}
+
+.controller-steps-count {
+    width: 20px;
+    height: 20px;
+    border-radius: 90px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #f7f7f7;
+    color: #5c5c5c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+body.hide-uphint-ext .uphint-ext-ignore-capture {
+    display: none;
+}
+
+.ext-uphint .main_button {
+    width: 206px !important;
+    height: 45px !important;
+    left: 1181px !important;
+    top: 214px !important;
+    cursor: pointer !important;
+    background: #15C97F !important;
+    border-radius: 100px !important;
+    border: 0px !important;
+}
+
+.ext-uphint-shadow-root {
+    margin: 15px 30px 0px 0px;
+    background: #ffffff;
+    z-index: 90000000000;
+    border-radius: 11px;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.ext-uphint-circle {
+    position: absolute !important;
+    height: 30px !important;
+    width: 30px !important;
+    background: none !important;
+    border-radius: 100px !important;
+    border: 2px solid !important;
+    border-color: #15C97F !important;
+    z-index: 2147483647 !important;
+    pointer-events: none;
+}
+
+.ext-uphint .main_button:hover {
+    background: #0e8d58 !important;
+}
+
+.ext-uphint .button-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.ext-uphint .main_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 29px;
+    /* or 204% */
+    color: #FFFFFF;
+}
+
+.ext-uphint .button-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: unset;
+    height: unset;
+}
+
+.ext-uphint .button-icon img {
+    margin-left: 14px;
+    width: unset;
+}
+
+.ext-uphint .button_drawer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ext-uphint .button_drawer_horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.ext-uphint .flex_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 11px 15px;
+}
+
+.ext-uphint .info_drawer {
+    justify-content: flex-start;
+}
+
+.ext-uphint .info_drawer_end {
+    justify-content: flex-end;
+}
+
+.ext-uphint .info_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.ext-uphint .button_drawer button {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.ext-uphint .button_drawer p {
+    text-align: center;
+}
+
+.ext-uphint .button_drawer_horizontal button {
+    margin: 10px !important;
+    cursor: pointer;
+}
+
+.ext-uphint .secondary_button {
+    width: 206px !important;
+    height: 45px !important;
+    left: 1181px !important;
+    top: 274px !important;
+    cursor: pointer;
+    border: 1px solid #566789 !important;
+    box-sizing: border-box;
+    border-radius: 100px !important;
+    background: #FFFFFF !important;
+}
+
+.ext-uphint .secondary_button:hover {
+    background: #f3f3f3 !important;
+}
+
+.ext-uphint .secondary_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 130% */
+    color: #566789;
+}
+
+.ext-uphint .tertiary_button {
+    width: 206px !important;
+    height: 45px !important;
+    left: 1181px !important;
+    top: 274px !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: 0
+}
+
+.ext-uphint .tertiary_button:hover {
+    background: #f3f3f3 !important;
+}
+
+.ext-uphint .outline_button {
+    width: 136px !important;
+    height: 42px !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(86, 103, 137, 0.26) !important;
+    box-sizing: border-box !important;
+    padding: 6px 16px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+}
+
+.ext-uphint .outline_button:hover {
+    background: #f3f3f3 !important;
+}
+
+.ext-uphint .outline_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(21, 25, 32, 0.5);
+}
+
+.ext-uphint .warning_button {
+    width: 136px !important;
+    height: 42px !important;
+    padding: 6px 16px !important;
+    background: #FF6058 !important;
+    border: 0px !important;
+    box-sizing: border-box;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+}
+
+.ext-uphint .warning_button:hover {
+    background: #dd514a !important;
+}
+
+.warning_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF !important;
+}
+
+.ext-uphint .tertiary_text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 29px;
+    /* or 204% */
+    color: #FF6058 !important;
+}
+
+.ext-uphint .padding-1 {
+    padding-top: 44px;
+    padding-bottom: 34px;
+}
+
+.ext-uphint .padding-top-1 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.ext-uphint .delete-warning {
+    padding: 0 14px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    /* Mid Emphasis */
+    color: rgba(21, 25, 32, 0.5);
+}
+
+.ext-uphint .icon-bubble {
+    height: 56px;
+    width: 56px;
+    background: rgba(55, 73, 87, 0.2);
+    border-radius: 50%;
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.ext-uphint img {
+    filter: none !important;
+}
+
+.spinner-logo {
+    width: 112px;
+    margin-bottom: 20px;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(3deg); */
+    /* transform: rotate(0.3rad);/ */
+    /* transform: rotate(3grad); */
+    /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.App-ext {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+    background-color: #282c34;
+    width: unset;
+}
+
+#root-ext {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    background: linear-gradient(292.87deg, rgba(0, 117, 255, 0.1) 0%, rgba(255, 255, 255, 0.52) 25.01%, rgba(255, 255, 255, 0.85) 29.73%, #FFFFFF 34.68%);
+}
+
+.App-logo {
+    height: 30vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
